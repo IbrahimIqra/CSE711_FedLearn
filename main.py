@@ -22,8 +22,10 @@ def main(cfg: DictConfig):
                 )
 
     print('-------Loaders Information-------')
-    print( f"Total Train_Loaders(for each clinents): {len(train_loaders)}, Each Train_Loader has {len(train_loaders[0].dataset)} data\
-          \nTotal Val_Loaders(for each clinents): {len(val_loaders)}, Each Val_Loader has {len(val_loaders[0].dataset)} data{len(val_loaders)=}\
+    print( f"Total Train_Loaders (eqauls to the amount of clients): {len(train_loaders)},\
+          \nEach Train_Loader has {len(train_loaders[0].dataset)} training data (for each clinents)\
+          \nTotal Val_Loaders (eqauls to the amount of clients): {len(val_loaders)},\
+          \nEach Val_Loader has {len(val_loaders[0].dataset)} validation data (for each clinents)\
           \nTotal Test_Loaders {len(test_loader)=}")
     print('---------------------------------\n\n')
 
