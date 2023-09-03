@@ -1,6 +1,8 @@
 import hydra
 from omegaconf import DictConfig, OmegaConf
 
+from dataset import prepare_dataset
+
 @hydra.main(config_path="conf",config_name="basic",version_base=None)
 def main(cfg: DictConfig):
 
@@ -8,8 +10,17 @@ def main(cfg: DictConfig):
     print(OmegaConf.to_yaml(cfg))
 
     #2. Preparing Dataset
-    train_loader, validation_loader, test_loader = prepare_dataset()
+    train_loaders, \
+        validation_loaders, \
+            test_loader \
+                = prepare_dataset(
+                    num_partition=cfg.num_clients,
+                    batch_size=cfg.batch_size
+                )
 
+    print( f"{len(train_loaders)=}\n{len(validation_loaders)=}\n{len(test_loader)=}" )
+    print('----------')
+    print( f"{len(train_loaders[0])=}\n{len(validation_loaders[0])=}\n{len(test_loader)=}" )
     #3. Defining clients
 
     #4. Define the strategy
