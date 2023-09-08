@@ -4,7 +4,7 @@ import flwr as fl
 
 from model import Net, train, test
 
-class FlwrClient(fl.client.NumpyClient):
+class FlwrClient(fl.client.NumPyClient):
     def __init__(self, train_loader, val_loader, num_classes):
         super().__init__()
 
