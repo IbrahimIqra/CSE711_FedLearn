@@ -1,6 +1,8 @@
+from typing import Dict
 from collections import OrderedDict
 import torch
 import flwr as fl
+from flwr.common import Scalar
 
 from model import Net, train, test
 
