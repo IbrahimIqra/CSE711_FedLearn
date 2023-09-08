@@ -29,8 +29,6 @@ class FlwrClient(fl.client.NumpyClient):
 
         return  p
 
-        pass
-
     '''
         here params is a list of nparrays
         represeting current state of the 
@@ -82,4 +80,3 @@ def generate_client(train_loaders, val_loaders, num_classes):
                         )
 
     return client_fn
-    pass
