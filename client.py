@@ -24,7 +24,7 @@ class FlwrClient(fl.client.NumpyClient):
     def get_params(self, config: Dict[str, Scalar]):
 
         p = []
-        for _,v in self.model.state_dict().items():
+        for _,val in self.model.state_dict().items():
             p.append(val.cpu().numpy())
 
         return  p

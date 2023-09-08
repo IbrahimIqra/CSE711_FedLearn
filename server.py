@@ -25,7 +25,7 @@ def get_on_fit_config(config: DictConfig):
 def get_evaluate_fn(num_classes: int, test_loader):
 
     #follows same structure of evaluate function on fedavg.py file
-    def evaluate_fn(server_rounds: int, parameters, config):
+    def evaluate_fn(server_rounds: int, params, config):
         model = Net(num_classes=num_classes)
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
