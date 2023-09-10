@@ -61,7 +61,7 @@ class FlwrClient(fl.client.NumPyClient):
               )
 
                 # params            # soemtimes needed     #metric
-        return self.get_params(), len(self.train_loader), {}
+        return self.get_params({}), len(self.train_loader), {}
 
     def evaluate(self, params, config: Dict[str, Scalar]):
 
